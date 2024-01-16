@@ -1,14 +1,28 @@
 
 import './App.css';
-import AddPostForm from './features/posts/AddPostForm';
-import PostsList from './features/posts/PostsList';
+import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NoPage from './pages/NoPage';
+import Navbar from './components/Navbar';
+import Post from './pages/Post';
+
+
 
 function App() {
   return (
-    <div className="App">
-    <AddPostForm/>
-    <PostsList/>
+    <BrowserRouter>
+    <div>
+      <Navbar/>
     </div>
+      <Routes>
+        <Route path='/navbar' element={<Navbar/>}/>
+        <Route path='/' index element={<Home/>}/>
+        <Route path='/post' index element={<Post/>}/>
+        <Route path="*" element={<NoPage />} />
+        
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 

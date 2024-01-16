@@ -14,19 +14,20 @@ const postsSlice = createSlice({
             reducer(state, action){
             state.push(action.payload) // in  react usually push will mutate the state if it gets done likes this but not in redux thanks to immer.js that in behing the reduxjs but it will only work in the createSlice.
             },
-            prepare(title, content){  // a prepare callback can generate a unique id , format data, return object with payload
+            prepare(title, content, userId){  // a prepare callback can generate a unique id , format data, return object with payload
                 return{
                     payload:{
                         id:nanoid(),
                         title, 
-                        content
+                        content,
+                        userId
                     }
-                }
-            }   
+                }   
 
-        }
+         }
     }
-})
+}
+});
 
 export const selectAllPosts = (state) => state.posts; // this is used so when the chape of the state ever changes it will only change in the slice and not in every component. 
 
