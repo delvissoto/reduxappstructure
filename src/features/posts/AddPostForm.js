@@ -24,7 +24,7 @@ const onSavePostClicked = (e) =>{
     }
 }
 
-const canSave = Boolean(title) && Boolean(content) && Boolean(userId) // gets applied to the submit button  
+const canSave = Boolean(title) && Boolean(content) && Boolean(userId) // gets applied to the submit button . verifies to see if it is true that it has been entered or selected. 
 
 const userOptions = users.map(user =>( // this will display a option of users that we can select to apply it to the post. 
     <option key={user.id} value={user.id}>
