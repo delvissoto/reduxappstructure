@@ -35,20 +35,20 @@ const userOptions = users.map(user =>( // this will display a option of users th
 
 
   return (
-    <section>
-    <p>create posts</p>
-    <form>
+    <section className="formArea">
+    <p >Create posts</p>
+    <form >
 
-        <label htmlFor="postTitle"> Post Title:</label>
+        <label htmlFor="postTitle"> Post Title:</label><br/>
         <input type="text" id="postTitle" name="postTitle" value={title}  onChange={(e) => setTitle(e.target.value)}></input><br/>
 
-        <label htmlFor="postAuthor">Aurthor: </label>
+        <label htmlFor="postAuthor">Aurthor: </label><br/>
         <select id="postAuthor" value={userId} onChange={(e) => setUserId(e.target.value)}>
             <option value=" "></option>
             {userOptions}
         </select><br/>
 
-        <label htmlFor="postContent"> Post Content:</label>
+        <label htmlFor="postContent"> Post Content:</label><br/>
         <input type="text" id="postContent" name="postContent" value={content}  onChange={(e) => setContent(e.target.value)}></input><br/>
 
         <input type="submit" onClick={onSavePostClicked} disabled={!canSave}></input>

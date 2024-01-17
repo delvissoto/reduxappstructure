@@ -13,7 +13,7 @@ const ReactionButtons = ({post}) =>{
 
 const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji])=> {
     return (
-        <button
+        <button 
         key={name}
         type="button"
         className="reactionButton"

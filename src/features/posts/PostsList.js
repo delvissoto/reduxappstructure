@@ -12,7 +12,7 @@ const PostsList = () => {
 
 
   const renderPost = orderedPosts.map(post =>(   // here we are mapping throught posts grabing the reducers to be mapped and render. 
-    <article key={post.id}>
+    <article key={post.id} className="singlePost">
       <h3>{post.title}</h3>
       <p>{post.content.substring(0,100)}</p>
       <p>
@@ -23,7 +23,7 @@ const PostsList = () => {
     </article>
   ))
   return (
-    <div>
+    <div className="postdiv">
       <h2>POSTS</h2>
       {renderPost}
     </div>
